@@ -11,13 +11,13 @@
 </template>
 
 <script>
-  import Header from '@/components/public/Header'
-  import Jumbotron from '@/components/public/jumbotron'
+  import Header from '@/components/Header'
+  import Jumbotron from '@/components/jumbotron'
   import OrderAdvantage from './orderAdvantage'
-  import PromoteProcess from '@/components/public/promoteProcess'
+  import PromoteProcess from '@/components/promoteProcess'
   import OrderCase from './orderCase'
-  import GuideRegister from '@/components/public/guideRegister'
-  import Footer3 from '@/components/public/footer'
+  import GuideRegister from '@/components/guideRegister'
+  import Footer3 from '@/components/footer'
 
 
   export default {

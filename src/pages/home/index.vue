@@ -12,14 +12,14 @@
 </template>
 
 <script>
-  import Header from '@/components/public/Header'
+  import Header from '@/components/Header'
   import Slider from './slider'
   import ExtensionModel from './extensionModel'
   import MediaResource from './mediaResource'
   import AdCase from './adCase'
   import Clients from './clients'
-  import GuideRegister from '@/components/public/guideRegister'
-  import Footer from '@/components/public/footer'
+  import GuideRegister from '@/components/guideRegister'
+  import Footer from '@/components/footer'
 
   export default {
     name: 'Home',

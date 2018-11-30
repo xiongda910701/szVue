@@ -39,8 +39,8 @@
 </template>
 
 <script>
-  import Header from '@/components/public/Header'
-  import Footer5 from '@/components/public/footer'
+  import Header from '@/components/Header'
+  import Footer5 from '@/components/footer'
 
   export default {
     name: "Login",

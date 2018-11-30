@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import Header from '@/components/public/Header'
-  import Footer4 from '@/components/public/footer'
+  import Header from '@/components/Header'
+  import Footer4 from '@/components/footer'
 
   export default {
         name: "Help",

@@ -10,12 +10,12 @@
 </template>
 
 <script>
-  import Header from '@/components/public/Header'
-  import Jumbotron from '@/components/public/jumbotron'
+  import Header from '@/components/Header'
+  import Jumbotron from '@/components/jumbotron'
   import UpfansType from './upfansType'
   import UpfansCase from './upfansCase'
   import ContactUs from './contactUs'
-  import Footer2 from '@/components/public/footer'
+  import Footer2 from '@/components/footer'
 
   export default {
     name: "UpFans",

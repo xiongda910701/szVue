@@ -12,14 +12,14 @@
 </template>
 
 <script>
-  import Header from '@/components/public/Header'
-  import Jumbotron from '@/components/public/jumbotron'
+  import Header from '@/components/Header'
+  import Jumbotron from '@/components/jumbotron'
   import PromoteForm from './promoteForm'
   import PromoteAdvantage from './promoteAdvantage'
-  import PromoteProcess from '@/components/public/promoteProcess'
+  import PromoteProcess from '@/components/promoteProcess'
   import PromoteCase from './promoteCase'
-  import GuideRegister from '../../components/public/guideRegister'
-  import Footer1 from '@/components/public/footer'
+  import GuideRegister from '@/components/guideRegister'
+  import Footer1 from '@/components/footer'
   export default {
         name: "Generalize",
         components:{
