@@ -7,6 +7,7 @@ import MediaOrder from '@/pages/mediaOrder/index'
 import Help from '@/pages/help/index'
 import Login from '@/pages/login/index'
 import Register from '@/pages/register/index'
+import ReSetPassword from '@/pages/reSetPassword/index'
 
 Vue.use(Router);
 
@@ -47,5 +48,10 @@ export default new Router({
       name: 'Register',
       component: Register
     },
+    {
+      path: '/reset/:type',
+      name: 'ReSetPassword',
+      component: ReSetPassword
+    }
   ]
 })
