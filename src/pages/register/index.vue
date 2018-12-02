@@ -41,13 +41,13 @@
 
           <div class="info-box">
             <el-checkbox v-model="checked" class="checkbox">已阅读并同意</el-checkbox>
-            <router-link to="/" class="service-state">服务条款</router-link>
+            <span class="service-state" @click="showClause">服务条款</span>
             <button type="button" class="btn">{{btnText}}</button>
             <div><span>已有账号?</span>
               <router-link to="/login">点击登录</router-link>
             </div>
           </div>
-
+          <serve-clause :state="state" :closeClause="closeClause"></serve-clause>
         </form>
       </div>
     </div>
@@ -58,14 +58,16 @@
 <script>
   import Header from '@/components/Header'
   import Footer5 from '@/components/footer'
+  import ServeClause from './serveClause'
 
   export default {
     name: "Register",
-    components: {Header, Footer5},
+    components: {Header, Footer5,ServeClause},
     data() {
       return {
         isActive: true,
         checked: false,
+        state:false,
         type: 0,
         btnText: "广告主注册"
       }
@@ -81,7 +83,12 @@
           this.type = 1;
           this.btnText = "媒体主注册";
         }
-
+      },
+      showClause(){
+        this.state = true;
+      },
+      closeClause(){
+        this.state = false;
       }
     }
   }
@@ -219,6 +226,7 @@
             font-size 14px
             color #4cb5ff
             top 2px
+            cursor pointer
           .btn
             width 100%
             height 40px

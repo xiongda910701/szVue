@@ -7,6 +7,7 @@
     <ad-case></ad-case>
     <clients :clientsList="clientsList"></clients>
     <guide-register :guideRegisterData="guideRegisterData"></guide-register>
+    <tool></tool>
     <Footer></Footer>
   </div>
 </template>
@@ -20,12 +21,13 @@
   import Clients from './clients'
   import GuideRegister from '@/components/guideRegister'
   import Footer from '@/components/footer'
+  import Tool from '@/components/tool'
 
   export default {
     name: 'Home',
     components:{
             Header,Slider,ExtensionModel,MediaResource,
-            AdCase,Clients,GuideRegister,Footer
+            AdCase,Clients,GuideRegister,Footer,Tool
     },
     data () {
       return {
