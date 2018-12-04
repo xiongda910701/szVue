@@ -9,7 +9,9 @@ import Login from '@/pages/login/index'
 import Register from '@/pages/register/index'
 import ReSetPassword from '@/pages/reSetPassword/index'
 
+
 Vue.use(Router);
+
 
 export default new Router({
   routes: [

@@ -27,7 +27,7 @@
 
 <script>
     export default {
-        name: "Header",
+        name: "CommonHeader",
         data(){
           return {
             routeConfig:[

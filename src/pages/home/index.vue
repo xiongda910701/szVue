@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <common-header></common-header>
     <Slider :sliderList="sliderList"></Slider>
     <extension-model :extensionModelList="extensionModelList"></extension-model>
     <media-resource></media-resource>
@@ -8,26 +8,26 @@
     <clients :clientsList="clientsList"></clients>
     <guide-register :guideRegisterData="guideRegisterData"></guide-register>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
+  import CommonHeader from '@/components/commonHeader'
   import Slider from './slider'
   import ExtensionModel from './extensionModel'
   import MediaResource from './mediaResource'
   import AdCase from './adCase'
   import Clients from './clients'
   import GuideRegister from '@/components/guideRegister'
-  import Footer from '@/components/footer'
+  import CommonFooter from '@/components/commonFooter'
   import Tool from '@/components/tool'
 
   export default {
     name: 'Home',
     components:{
-            Header,Slider,ExtensionModel,MediaResource,
-            AdCase,Clients,GuideRegister,Footer,Tool
+      CommonHeader,Slider,ExtensionModel,MediaResource,
+      AdCase,Clients,GuideRegister,CommonFooter,Tool
     },
     data () {
       return {
@@ -94,7 +94,7 @@
         ],
         guideRegisterData:{
           imgPath:require("@/assets/images/Login_bg.png"),
-          btnList:[{id:1,text:"自助开启推广",url:"#"},{id:1,text:"自助开启接单",url:"#"}]
+          btnList:[{id:1,text:"自助开启推广",url:"#"},{id:2,text:"自助开启接单",url:"#"}]
         }
       }
     }

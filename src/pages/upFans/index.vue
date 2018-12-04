@@ -1,28 +1,28 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <common-header></common-header>
     <jumbotron :jumbotronData="jumbotronData"></jumbotron>
     <upfans-type :offlinelist="offlinelist" :onlinelist="onlinelist"></upfans-type>
     <upfans-case :upfansCaselist="upfansCaselist"></upfans-case>
     <contact-us></contact-us>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
+  import CommonHeader from '@/components/commonHeader'
   import Jumbotron from '@/components/jumbotron'
   import UpfansType from './upfansType'
   import UpfansCase from './upfansCase'
   import ContactUs from './contactUs'
-  import Footer from '@/components/footer'
+  import CommonFooter from '@/components/commonFooter'
   import Tool from '@/components/tool'
 
 
   export default {
     name: "UpFans",
-    components: {Header, Jumbotron, UpfansType, UpfansCase, ContactUs, Footer,Tool},
+    components: {CommonHeader, Jumbotron, UpfansType, UpfansCase, ContactUs, CommonFooter,Tool},
     data() {
       return {
         jumbotronData: {

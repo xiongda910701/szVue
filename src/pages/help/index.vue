@@ -1,22 +1,22 @@
 <template>
   <div class="container">
-    <Header></Header>
-    <Content></Content>
+    <common-header></common-header>
+    <help-content></help-content>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
-  import Footer from '@/components/footer'
-  import Content from './content'
+  import CommonHeader from '@/components/commonHeader'
+  import CommonFooter from '@/components/commonFooter'
+  import HelpContent from './helpContent'
   import Tool from '@/components/tool'
 
 
   export default {
         name: "Help",
-        components:{Header,Content,Footer,Tool}
+        components:{CommonHeader,HelpContent,CommonFooter,Tool}
     }
 </script>
 

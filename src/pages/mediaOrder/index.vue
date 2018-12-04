@@ -1,24 +1,24 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <common-header></common-header>
     <jumbotron :jumbotronData="jumbotronData"></jumbotron>
     <order-advantage :orderAdvantageData="orderAdvantageData"></order-advantage>
     <promote-process :processData="processData"></promote-process>
     <order-case :orderCaseData="orderCaseData"></order-case>
     <guide-register :guideRegisterData="guideRegisterData"></guide-register>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
+  import CommonHeader from '@/components/commonHeader'
   import Jumbotron from '@/components/jumbotron'
   import OrderAdvantage from './orderAdvantage'
   import PromoteProcess from '@/components/promoteProcess'
   import OrderCase from './orderCase'
   import GuideRegister from '@/components/guideRegister'
-  import Footer from '@/components/footer'
+  import CommonFooter from '@/components/commonFooter'
   import Tool from '@/components/tool'
 
 
@@ -26,7 +26,7 @@
   export default {
         name: "MediaOrder",
         components:{
-              Header,Jumbotron,OrderAdvantage,PromoteProcess,GuideRegister,OrderCase,Footer,Tool
+          CommonHeader,Jumbotron,OrderAdvantage,PromoteProcess,GuideRegister,OrderCase,CommonFooter,Tool
         },
         data(){
           return {

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <common-header></common-header>
     <div class="container">
       <div class="content">
         <form class="form">
@@ -42,19 +42,19 @@
       </div>
     </div>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
-  import Footer from '@/components/footer'
+  import CommonHeader from '@/components/commonHeader'
+  import CommonFooter from '@/components/commonFooter'
   import Tool from '@/components/tool'
 
 
   export default {
     name: "ResetPassword",
-    components: {Header, Footer,Tool},
+    components: {CommonHeader, CommonFooter,Tool},
     data(){
       return {
         name:"广告主"

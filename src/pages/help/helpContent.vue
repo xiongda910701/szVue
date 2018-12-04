@@ -529,7 +529,7 @@
 
 <script>
   export default {
-    name: "content",
+    name: "HelpContent",
     data(){
       return {
         tabList:[
@@ -557,7 +557,6 @@
           let obj = {isShow:false};
           this.answerState.push(obj);
         }
-        console.log(this.answerState);
       },
       //改变回复显隐状态
       showAnswer(index){

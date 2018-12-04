@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <common-header></common-header>
     <jumbotron :jumbotronData="jumbotronData"></jumbotron>
     <promote-form></promote-form>
     <promote-advantage :promoteAdvantageData="promoteAdvantageData"></promote-advantage>
@@ -8,26 +8,26 @@
     <promote-case :promoteCaseData="promoteCaseData"></promote-case>
     <guide-register :guideRegisterData="guideRegisterData"></guide-register>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
+  import CommonHeader from '@/components/commonHeader'
   import Jumbotron from '@/components/jumbotron'
   import PromoteForm from './promoteForm'
   import PromoteAdvantage from './promoteAdvantage'
   import PromoteProcess from '@/components/promoteProcess'
   import PromoteCase from './promoteCase'
   import GuideRegister from '@/components/guideRegister'
-  import Footer from '@/components/footer'
+  import CommonFooter from '@/components/commonFooter'
   import Tool from '@/components/tool'
 
   export default {
         name: "Generalize",
         components:{
-          Header,Jumbotron,PromoteForm,PromoteAdvantage,
-          PromoteProcess,PromoteCase,GuideRegister,Footer,Tool
+          CommonHeader,Jumbotron,PromoteForm,PromoteAdvantage,
+          PromoteProcess,PromoteCase,GuideRegister,CommonFooter,Tool
         },
         data(){
           return {

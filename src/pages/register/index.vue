@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <common-header></common-header>
     <div class="container">
       <div class="content">
         <div class="tab">
@@ -52,20 +52,20 @@
       </div>
     </div>
     <tool></tool>
-    <Footer></Footer>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
-  import Header from '@/components/Header'
-  import Footer from '@/components/footer'
+  import CommonHeader from '@/components/commonHeader'
+  import CommonFooter from '@/components/commonFooter'
   import ServeClause from './serveClause'
   import Tool from '@/components/tool'
 
 
   export default {
     name: "Register",
-    components: {Header, Footer,ServeClause,Tool},
+    components: {CommonHeader, CommonFooter,ServeClause,Tool},
     data() {
       return {
         isActive: true,
