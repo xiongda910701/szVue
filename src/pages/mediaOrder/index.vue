@@ -6,7 +6,8 @@
     <promote-process :processData="processData"></promote-process>
     <order-case :orderCaseData="orderCaseData"></order-case>
     <guide-register :guideRegisterData="guideRegisterData"></guide-register>
-    <footer3></footer3>
+    <tool></tool>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -17,13 +18,15 @@
   import PromoteProcess from '@/components/promoteProcess'
   import OrderCase from './orderCase'
   import GuideRegister from '@/components/guideRegister'
-  import Footer3 from '@/components/footer'
+  import Footer from '@/components/footer'
+  import Tool from '@/components/tool'
+
 
 
   export default {
         name: "MediaOrder",
         components:{
-              Header,Jumbotron,OrderAdvantage,PromoteProcess,GuideRegister,OrderCase,Footer3
+              Header,Jumbotron,OrderAdvantage,PromoteProcess,GuideRegister,OrderCase,Footer,Tool
         },
         data(){
           return {

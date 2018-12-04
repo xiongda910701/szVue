@@ -37,7 +37,7 @@
 
 <script>
     export default {
-        name: "Footer",
+        name: "footer",
         data(){
           return {
             logo:require('@/assets/images/logo_white.png'),

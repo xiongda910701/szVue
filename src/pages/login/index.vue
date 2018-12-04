@@ -34,17 +34,20 @@
         </form>
       </div>
     </div>
-    <footer5></footer5>
+    <tool></tool>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import Header from '@/components/Header'
-  import Footer5 from '@/components/footer'
+  import Footer from '@/components/footer'
+  import Tool from '@/components/tool'
+
 
   export default {
     name: "Login",
-    components: {Header, Footer5},
+    components: {Header, Footer,Tool},
     data() {
       return {
         isActive: true,

@@ -38,21 +38,23 @@
           <div class="info-box">
             <button type="button" class="btn">重置密码</button>
           </div>
-
         </form>
       </div>
     </div>
-    <footer5></footer5>
+    <tool></tool>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import Header from '@/components/Header'
-  import Footer5 from '@/components/footer'
+  import Footer from '@/components/footer'
+  import Tool from '@/components/tool'
+
 
   export default {
     name: "ResetPassword",
-    components: {Header, Footer5},
+    components: {Header, Footer,Tool},
     data(){
       return {
         name:"广告主"

@@ -51,18 +51,21 @@
         </form>
       </div>
     </div>
-    <footer5></footer5>
+    <tool></tool>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
   import Header from '@/components/Header'
-  import Footer5 from '@/components/footer'
+  import Footer from '@/components/footer'
   import ServeClause from './serveClause'
+  import Tool from '@/components/tool'
+
 
   export default {
     name: "Register",
-    components: {Header, Footer5,ServeClause},
+    components: {Header, Footer,ServeClause,Tool},
     data() {
       return {
         isActive: true,

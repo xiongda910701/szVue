@@ -7,7 +7,8 @@
     <promote-process :processData="processData"></promote-process>
     <promote-case :promoteCaseData="promoteCaseData"></promote-case>
     <guide-register :guideRegisterData="guideRegisterData"></guide-register>
-    <footer1></footer1>
+    <tool></tool>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -19,12 +20,14 @@
   import PromoteProcess from '@/components/promoteProcess'
   import PromoteCase from './promoteCase'
   import GuideRegister from '@/components/guideRegister'
-  import Footer1 from '@/components/footer'
+  import Footer from '@/components/footer'
+  import Tool from '@/components/tool'
+
   export default {
         name: "Generalize",
         components:{
           Header,Jumbotron,PromoteForm,PromoteAdvantage,
-          PromoteProcess,PromoteCase,GuideRegister,Footer1
+          PromoteProcess,PromoteCase,GuideRegister,Footer,Tool
         },
         data(){
           return {

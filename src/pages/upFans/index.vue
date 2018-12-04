@@ -5,7 +5,8 @@
     <upfans-type :offlinelist="offlinelist" :onlinelist="onlinelist"></upfans-type>
     <upfans-case :upfansCaselist="upfansCaselist"></upfans-case>
     <contact-us></contact-us>
-    <footer2></footer2>
+    <tool></tool>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -15,11 +16,13 @@
   import UpfansType from './upfansType'
   import UpfansCase from './upfansCase'
   import ContactUs from './contactUs'
-  import Footer2 from '@/components/footer'
+  import Footer from '@/components/footer'
+  import Tool from '@/components/tool'
+
 
   export default {
     name: "UpFans",
-    components: {Header, Jumbotron, UpfansType, UpfansCase, ContactUs, Footer2},
+    components: {Header, Jumbotron, UpfansType, UpfansCase, ContactUs, Footer,Tool},
     data() {
       return {
         jumbotronData: {
