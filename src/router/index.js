@@ -8,6 +8,13 @@ import Help from '@/pages/help/index'
 import Login from '@/pages/login/index'
 import Register from '@/pages/register/index'
 import ReSetPassword from '@/pages/reSetPassword/index'
+import Ad from '@/pages/ad/index'
+import Media from '@/pages/media/index'
+import Read from '@/pages/read/index'
+import Position from '@/pages/position/index'
+import Order from '@/pages/order/index'
+import Finance from '@/pages/finance/index'
+import Person from '@/pages/person/index'
 
 
 Vue.use(Router);
@@ -54,6 +61,41 @@ export default new Router({
       path: '/reset/:type',
       name: 'ReSetPassword',
       component: ReSetPassword
+    },
+    {
+      path:'/ad',
+      name:'Ad',
+      component:Ad
+    },
+    {
+      path:'/media',
+      name:"Media",
+      component:Media
+    },
+    {
+      path:'/read',
+      name:"Read",
+      component:Read
+    },
+    {
+      path:'/position',
+      name:"Position",
+      component:Position
+    },
+    {
+      path:'/order',
+      name:"Order",
+      component:Order
+    },
+    {
+      path:'/finance',
+      name:"Finance",
+      component:Finance
+    },
+    {
+      path:'/person',
+      name:"Person",
+      component:Person
     }
   ]
 })
