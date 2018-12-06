@@ -53,6 +53,7 @@
       getCurrentPage() {
         let url = window.location.hash;
         let page = url.substr(1);
+        console.log(page);
         let type = this.userInfo.type;
         let data = [];
         if(type==0){

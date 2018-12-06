@@ -3,11 +3,11 @@
     <li class="item">
       <img :src="require('@/assets/images/IndexImg.png')" alt="">
       <div class="data-box fr">
-        <div class="Advertiser_DataList fl">
+        <div class="Advertiser_DataList">
           <span>0</span>
           <h4>待发布</h4>
         </div>
-        <div class="Advertiser_DataList fl">
+        <div class="Advertiser_DataList">
           <span>0</span>
           <h4>发布中</h4>
         </div>
@@ -16,11 +16,11 @@
     <li class="item">
       <img :src="require('@/assets/images/IndexImg1.png')" alt="">
       <div class="data-box fr">
-        <div class="Advertiser_DataList fl">
+        <div class="Advertiser_DataList">
           <span>0</span>
           <h4>已完成</h4>
         </div>
-        <div class="Advertiser_DataList fl">
+        <div class="Advertiser_DataList">
           <span>0</span>
           <h4>已取消</h4>
         </div>
@@ -29,7 +29,7 @@
     <li class="item">
       <img :src="require('@/assets/images/IndexImg2.png')" alt="">
       <div class="data-box fr">
-        <div class="Advertiser_DataList fl">
+        <div class="Advertiser_DataList">
           <span>0.00</span>
           <h4>实际消费</h4>
         </div>
@@ -40,7 +40,7 @@
 
 <script>
   export default {
-    name: "summary"
+    name: "SummaryComponent"
   }
 </script>
 
@@ -68,4 +68,15 @@
         position absolute
         top 0
         right 0
+        .Advertiser_DataList
+          text-align center
+          color #333
+          display inline-block
+          padding 20px 40px 20px 10px
+          span
+            font-size 28px
+            line-height 36px
+          h4
+            font-size 13px
+            color #333
 </style>

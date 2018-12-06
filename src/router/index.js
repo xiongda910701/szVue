@@ -13,8 +13,17 @@ import Media from '@/pages/media/index'
 import Read from '@/pages/read/index'
 import Position from '@/pages/position/index'
 import Order from '@/pages/order/index'
-import Finance from '@/pages/finance/index'
 import Person from '@/pages/person/index'
+
+import Finance from '@/pages/finance/index'
+import Charge from '@/pages/finance/children/charge'
+import ChargeRecord from '@/pages/finance/children/chargeRecord'
+import ExpendRecord from '@/pages/finance/children/expendRecord'
+import BackRecord from '@/pages/finance/children/backRecord'
+import FreezeRecord from '@/pages/finance/children/freezeRecord'
+import UnfreezeRecord from '@/pages/finance/children/unfreezeRecord'
+
+
 
 
 Vue.use(Router);
@@ -90,7 +99,39 @@ export default new Router({
     {
       path:'/finance',
       name:"Finance",
-      component:Finance
+      component:Finance,
+      //redirect:'/finance/charge',
+      children:[
+        {
+          path:'/finance/charge',
+          name:"Charge",
+          component:Charge,
+        },
+        {
+          path:'/finance/chargeRecord',
+          name:"ChargeRecord",
+          component:ChargeRecord,
+        },
+        {
+          path:'/finance/expendRecord',
+          name:"ExpendRecord",
+          component:ExpendRecord,
+        },
+        {
+          path:'/finance/backRecord',
+          name:"BackRecord",
+          component:BackRecord,
+        },
+        {
+          path:'/finance/freezeRecord',
+          name:"FreezeRecord",
+          component:FreezeRecord,
+        },{
+          path:'/finance/unfreezeRecord',
+          name:"UnfreezeRecord",
+          component:UnfreezeRecord,
+        },
+      ]
     },
     {
       path:'/person',
