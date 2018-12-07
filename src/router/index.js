@@ -24,8 +24,6 @@ import FreezeRecord from '@/pages/finance/children/freezeRecord'
 import UnfreezeRecord from '@/pages/finance/children/unfreezeRecord'
 
 
-
-
 Vue.use(Router);
 
 
@@ -72,71 +70,72 @@ export default new Router({
       component: ReSetPassword
     },
     {
-      path:'/ad',
-      name:'Ad',
-      component:Ad
+      path: '/ad',
+      name: 'Ad',
+      component: Ad
     },
     {
-      path:'/media',
-      name:"Media",
-      component:Media
+      path: '/media',
+      name: "Media",
+      component: Media
     },
     {
-      path:'/read',
-      name:"Read",
-      component:Read
+      path: '/read',
+      name: "Read",
+      component: Read
     },
     {
-      path:'/position',
-      name:"Position",
-      component:Position
+      path: '/position',
+      name: "Position",
+      component: Position
     },
     {
-      path:'/order',
-      name:"Order",
-      component:Order
+      path: '/order',
+      name: "Order",
+      component: Order
     },
     {
-      path:'/finance',
-      name:"Finance",
-      component:Finance,
+      path: '/finance',
+      name: "Finance",
+      component: Finance,
       //redirect:'/finance/charge',
-      children:[
+      children: [
         {
-          path:'/finance/charge',
-          name:"Charge",
-          component:Charge,
+          path: '/finance/charge',
+          name: "Charge",
+          component: Charge,
         },
         {
-          path:'/finance/chargeRecord',
-          name:"ChargeRecord",
-          component:ChargeRecord,
+          path: '/finance/chargeRecord',
+          name: "ChargeRecord",
+          component: ChargeRecord,
         },
         {
-          path:'/finance/expendRecord',
-          name:"ExpendRecord",
-          component:ExpendRecord,
+          path: '/finance/expendRecord',
+          name: "ExpendRecord",
+          component: ExpendRecord,
         },
         {
-          path:'/finance/backRecord',
-          name:"BackRecord",
-          component:BackRecord,
+          path: '/finance/backRecord',
+          name: "BackRecord",
+          component: BackRecord,
         },
         {
-          path:'/finance/freezeRecord',
-          name:"FreezeRecord",
-          component:FreezeRecord,
-        },{
-          path:'/finance/unfreezeRecord',
-          name:"UnfreezeRecord",
-          component:UnfreezeRecord,
+          path: '/finance/freezeRecord',
+          name: "FreezeRecord",
+          component: FreezeRecord,
         },
+        {
+          path: '/finance/unfreezeRecord',
+          name: "UnfreezeRecord",
+          component: UnfreezeRecord,
+        }
       ]
     },
     {
-      path:'/person',
-      name:"Person",
-      component:Person
+      path: '/person',
+      name: "Person",
+      component: Person
     }
   ]
 })
