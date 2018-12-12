@@ -1,79 +1,40 @@
 <template>
   <div class="container">
     <div class="content">
-      <div class="logo-box">
-        <router-link to="/"><img src="@/assets/images/Logo2.png" class="logo" alt="logo"></router-link>
-        <img src="@/assets/images/line.png" class="line" alt="line">
-        <span class="text">新媒体广告平台</span>
+      <div class="logo-box fl"><img :src="logo" class="logo" alt=""/></div>
+      <div class="nav fl">
+        <router-link to="/"  exact active-class="active">首页</router-link>
+        <router-link to="/a" active-class="active">下载</router-link>
+        <router-link to="/b" active-class="active">应用</router-link>
+        <router-link to="/c" active-class="active">推广盈利</router-link>
+        <router-link to="/d" active-class="active">帮助</router-link>
       </div>
-      <ul class="nav-box">
-        <li class="item"
-            v-for="item in routeConfig"
-            :class="item.isActive?'active':''"
-            :key="item.id"
-            :data-to="item.path"
-            @click="goPage"
-        >
-          {{item.text}}
-        </li>
-      </ul>
-      <div class="loginInfo-box" v-if="!isLogin">
-        <router-link to="/login" class="btn-login">登录</router-link>
-        <router-link to="/register" class="btn-register">注册</router-link>
-      </div>
-      <div class="userInfo-box" v-if="isLogin">
-        <router-link :to="userInfo.type==0?'/ad':'/media'">
-          <img src="@/assets/images/Personal.png" alt="">
-          <span>{{userInfo.name}}</span>
-        </router-link>
+      <div class="login-info fr">
+        <button type="button" class="btn-login" v-show="false">登录</button>
+        <div class="user-info fr" v-show="true">
+          <img :src="require('@/assets/images/chrome-icon.png')" alt="" class="user-head">
+          <span class="user-name">18702604270</span>
+          <img :src="down" alt="" class="icon-select">
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import vue from 'vue'
+  import Icon from 'vue2-svg-icon/Icon.vue'
+
+  vue.component('icon', Icon);
+
   export default {
-    name: "CommonHeader",
-    data() {
+    name: "commonHeader",
+    data(){
       return {
-        routeConfig: [
-          {id: 1, path: "/", text: "首页", isActive: true},
-          {id: 2, path: "/generalize", text: "微信推广", isActive: false},
-          {id: 3, path: "/upFans", text: "公众号涨粉", isActive: false},
-          {id: 4, path: "/mediaOrder", text: "媒体接单", isActive: false},
-          {id: 5, path: "/help", text: "帮助中心", isActive: false}
-        ]
+        logo:require("@/assets/images/logo.png"),
+        up:require("@/assets/images/up.png"),
+        down:require("@/assets/images/down.png"),
       }
-    },
-    computed:{
-      ...mapState({
-        isLogin:'isLogin',
-        userInfo:'userInfo'
-      })
-    },
-    methods: {
-      //定义获取当前页面函数
-      getCurrentPage() {
-        let url = window.location.hash;
-        let page = url.substr(1);
-        let data = this.routeConfig;
-        data.forEach((item, index) => {
-          item.isActive = false;
-          if (item.path == page) {
-            data[index].isActive = true
-          }
-        });
-        this.routeConfig = data;
-      },
-      //定义点击跳转事件
-      goPage(event) {
-        let page = event.currentTarget.getAttribute("data-to");
-        this.$router.push({path: page});
-      }
-    },
-    mounted() {
-      this.getCurrentPage();
     }
   }
 </script>
@@ -81,83 +42,56 @@
 <style lang="stylus" scoped>
   .container
     width 100%
-    background-color rgba(256, 256, 256, .98)
-    position fixed
-    top 0
-    z-index 100
-
+    height 0.8rem
+    overflow hidden
+    font-size 0.16rem
+    background rgba(255, 255, 255, 1)
+    box-shadow 0 2px 10px 0 rgba(240, 245, 243, 0.35)
+    border-bottom  1px solid #ececec
     .content
-      width 1200px
-      padding 19.5px 0
+      width 12rem
+      height 0.8rem
+      line-height 0.8rem
       margin 0 auto
-      overflow hidden
-
-      .logo-box, .nav-box, .loginInfo-box
-        float left
-
       .logo-box
-        display flex
-        align-items center
-        height 43px
-        font-size 14px
-        color #666
-
         .logo
-          width 144px
-          height 43px
-
-        .line
-          margin 0 10px
-
-      .nav-box
-        padding-left 30px
-        font-size 16px
-        height 43px
-        line-height 43px
-        color #666
-
-        .item
-          float left
-          padding 0 30px
-          cursor pointer
-
-          &.active
-            color #4cb5ff
-
-      .loginInfo-box
-        float right
-        height 43px
-        line-height 43px
-
+          width 1.16rem
+          height 0.32rem
+          margin-top 0.24rem
+      .nav
+        margin-left 1.2rem
         a
-          line-height 30px
-          padding 0 19px
-          font-size 16px
-          border 1px solid #4cb5ff
-          color #4cb5ff
-          display inline-block
-
-        .btn-login:hover
-          background-color #4cb5ff
+          font-size 0.16rem
+          color #475766
+          margin-right 0.81rem
+        .active
+          color #177FE6
+      .login-info
+        .btn-login
+          width 0.88rem
+          height 0.4counter-increment
           color white
-
-        .btn-register
-          background-color #4cb5ff
-          color white
-
-      .userInfo-box
-        height 43px
-        line-height 43px
-        float right
-
-        img
-          display: inline-block;
-          width: 16px;
-          height: 16px;
-          margin-right: 4px;
-          margin-bottom: -1px;
-
-        span
-          font-size 16px
-          color #4cb5ff
+          font-size 0.16rem
+          background rgba(23,127,230,1)
+          border 1px solid rgba(23,127,230,1)
+          border-radius 2px
+          cursor pointer
+        .user-info
+          display flex
+          align-items center
+          .user-head
+            width 0.24rem
+            height 0.24rem
+            border-radius 100%
+            vertical-align middle
+          .user-name
+            font-size 0.16rem
+            color #475766
+          .icon-select
+            display inline-block
+            width 0.1rem
+            height 0.05rem
+            cursor pointer
+            margin-left 0.05rem
+            margin-bottom 0.05rem
 </style>

@@ -37,6 +37,6 @@
     padding 0 0 30px 0
     text-align center
     .el-pagination
-      width 50%
-      margin-left 50%
+      width 55%
+      margin-left 45%
 </style>

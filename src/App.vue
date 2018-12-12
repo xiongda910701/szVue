@@ -5,12 +5,14 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
 <style lang="stylus">
+  @import "assets/style/iconfont.css"
+  @import "assets/style/common.styl"
   #app
     font-family 'Avenir', Helvetica, Arial, sans-serif
     -webkit-font-smoothing antialiased

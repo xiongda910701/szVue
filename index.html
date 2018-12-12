@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html style="font-size: 100px;">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="http://www.shenzan.com/home_images/Favicon.png?v=20170101100">
-    <title>神赞VUE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="static/logo1.png">
+    <title>美编</title>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    var deviceWidth;
+    this.setHtmlFontSize();
+    if (window.addEventListener) {
+      window.addEventListener('resize', function () {
+        setHtmlFontSize()
+      }, false)
+    }
+    function setHtmlFontSize() {
+      // 1920是设计稿的宽度，当大于1920时采用1920宽度，比例也是除以19.20
+      deviceWidth = document.documentElement.clientWidth > 1920 ? 1920 : document.documentElement.clientWidth;
+      document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 19.20 + 'px !important'
+    }
+  </script>
 </html>
