@@ -2,15 +2,23 @@
   <div class="container">
     <common-header></common-header>
     <banner></banner>
+    <tablist></tablist>
+    <find-more></find-more>
+    <user-case></user-case>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
   import CommonHeader from '@/components/commonHeader'
   import Banner from './banner'
+  import Tablist from './tabList'
+  import FindMore from './findMore'
+  import UserCase from './userCase'
+  import CommonFooter from '@/components/commonFooter'
   export default {
     name: 'Home',
-    components: {CommonHeader,Banner},
+    components: {CommonHeader,Banner,Tablist,FindMore,UserCase,CommonFooter},
   }
 </script>
 

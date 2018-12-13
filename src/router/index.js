@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/index'
-import A from '@/pages/A/index'
+import Download from '@/pages/download/index'
 import B from '@/pages/B/index'
 import C from '@/pages/C/index'
-import D from '@/pages/D/index'
+import Help from '@/pages/help/index'
 
 
 
@@ -19,9 +19,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/a',
-      name: 'a',
-      component: A
+      path: '/download',
+      name: 'download',
+      component: Download
     },
     {
       path: '/b',
@@ -34,9 +34,9 @@ export default new Router({
       component: C
     },
     {
-      path: '/d',
-      name: 'd',
-      component: D
+      path: '/help',
+      name: 'help',
+      component: Help
     }
   ]
 })

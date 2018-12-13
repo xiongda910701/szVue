@@ -4,10 +4,10 @@
       <div class="logo-box fl"><img :src="logo" class="logo" alt=""/></div>
       <div class="nav fl">
         <router-link to="/"  exact active-class="active">首页</router-link>
-        <router-link to="/a" active-class="active">下载</router-link>
+        <router-link to="/download" active-class="active">下载</router-link>
         <router-link to="/b" active-class="active">应用</router-link>
         <router-link to="/c" active-class="active">推广盈利</router-link>
-        <router-link to="/d" active-class="active">帮助</router-link>
+        <router-link to="/help" active-class="active">帮助</router-link>
       </div>
       <div class="login-info fr">
         <button type="button" class="btn-login" v-show="false">登录</button>

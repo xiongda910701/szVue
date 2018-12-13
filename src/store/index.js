@@ -7,6 +7,7 @@ const store = new vuex.Store({
   state: {
     isLogin:true,
     userInfo:{name:"18702604270",type:0},
+    selectBrowserDownLoadIndex:1,
     windowState: false,
     sideBarState:false,
     list:{}
@@ -26,8 +27,8 @@ const store = new vuex.Store({
     changeWindowState(state) {
       state.windowState = !state.windowState;
     },
-    changeSideBarState(state) {
-      state.sideBarState = !state.sideBarState;
+    changeBrowserDownLoadIndex(state) {
+      state.selectBrowserDownLoadIndex = 1;
     },
     getHomeData(state,payload){
       state.list=payload.data;
