@@ -30,6 +30,7 @@
     height 8rem
     font-size 0.16rem
     position relative
+    z-index 1
     img
       width 100%
       height 8rem

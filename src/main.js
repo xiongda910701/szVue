@@ -8,6 +8,7 @@ import '@/assets/style/reset.styl'
 import '@/assets/style/common.styl'
 
 Vue.use(ElementUi);
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

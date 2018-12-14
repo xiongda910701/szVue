@@ -20,25 +20,25 @@
         <li class="item">
           <dl>
             <dt>关于</dt>
-            <dd>美编简介</dd>
-            <dd>联系方式</dd>
+            <dd><router-link to="/about">美编简介</router-link></dd>
+            <dd><router-link to="/about">联系方式</router-link></dd>
           </dl>
         </li>
         <li class="item">
           <dl>
-            <dt class="desc"><img src="" alt=""></dt>
+            <dt class="desc"><img :src="imgPath" alt=""></dt>
             <dd>关注美编助手</dd>
           </dl>
         </li>
         <li class="item">
           <dl>
-            <dt class="desc"><img src="" alt=""></dt>
+            <dt class="desc"><img :src="imgPath" alt=""></dt>
             <dd>扫码联系客服</dd>
           </dl>
         </li>
         <li class="item">
           <dl>
-            <dt class="desc"><img src="" alt=""></dt>
+            <dt class="desc"><img :src="imgPath" alt=""></dt>
             <dd>关注神赞</dd>
           </dl>
         </li>
@@ -50,7 +50,12 @@
 
 <script>
   export default {
-    name: "commonFooter"
+    name: "commonFooter",
+    data(){
+      return {
+        imgPath:require('@/assets/images/qrCode.png')
+      }
+    }
   }
 </script>
 
@@ -79,6 +84,14 @@
             background-color #ddd
         dd
           margin-bottom 0.15rem
+          &:hover
+            color #177fe6
+            text-decoration underline
+            cursor pointer
+          &:hover a
+            color #177fe6
+          a
+           color #b8c2cc
         .desc
           margin-bottom 0.08rem
     .copyright

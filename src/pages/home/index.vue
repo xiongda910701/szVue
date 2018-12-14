@@ -6,6 +6,7 @@
     <find-more></find-more>
     <user-case></user-case>
     <common-footer></common-footer>
+    <user-info-window></user-info-window>
   </div>
 </template>
 
@@ -16,9 +17,11 @@
   import FindMore from './findMore'
   import UserCase from './userCase'
   import CommonFooter from '@/components/commonFooter'
+  import UserInfoWindow from '@/components/userInfoWindow'
+
   export default {
     name: 'Home',
-    components: {CommonHeader,Banner,Tablist,FindMore,UserCase,CommonFooter},
+    components: {CommonHeader,Banner,Tablist,FindMore,UserCase,CommonFooter,UserInfoWindow},
   }
 </script>
 
