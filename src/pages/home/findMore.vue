@@ -1,6 +1,7 @@
 <template>
     <div class="container">
       <div class="content">
+        <img :src="require('@/assets/images/findmore.jpg')" alt="" class="banner">
         <div class="title">发现更多功能</div>
         <div class="desc">从热点捕捉、素材编辑到精美样式，为日常运营提供便捷，同时还能高效变现</div>
         <ul class="list">
@@ -34,51 +35,8 @@
 </script>
 
 <style lang="stylus" scoped>
-  .container
-    width 19.2rem
-    background:rgba(250,251,252,1);
-    padding  1.6rem 0 1.58rem 0;
-    .content
-      width 12rem
-      margin 0 auto
-      text-align center
-      .title
-        /*font-size 0.48rem*/
-        font-size 48px
-        font-family PingFang-SC-Bold
-        font-weight 500
-        color rgba(71,87,102,1)
-        overflow hidden
-      .desc
-        font-size 0.2rem
-        margin-top 0.39rem
-        font-family PingFang-SC-Medium
-        font-weight 500
-        color rgba(122,138,153,1)
-      .list
-        overflow hidden
-        margin-top 0.5rem
-        .item
-          float left
-          .list-title
-            height 0.6rem
-            line-height 0.6rem
-            font-size 0.18rem
-            color #475766
-            text-align left
-            i
-              font-size 0.24rem
-              color #177fe6
-              margin-right 0.1rem
-              vertical-align middle
-          .list-desc
-            width 3.19rem
-            font-size 0.16rem
-            font-family PingFang-SC-Medium
-            font-weight 500
-            color rgba(122,138,153,1)
-            line-height 0.25rem
-            text-align left
-        .item-mid
-          margin 0 1.2rem 0 1.2rem
+  @media screen and (max-width: 768px)
+    @import "./css/findMoreCss/mobile.styl"
+  @media screen and (min-width: 769px)
+    @import "./css/findMoreCss/pc.styl"
 </style>

@@ -28,11 +28,20 @@ time, mark, audio, video
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section
   display block
-
+[v-cloak]{ display:none}
 
 body
   line-height 1
-  background: #fafbfc;
+  background #fafbfc;
+  height 100%
+  overflow-x:hidden
+  margin 0
+  font-family "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+  -webkit-font-smoothing subpixel-antialiased
+
+
+body::-webkit-scrollbar
+  display none
 
 
 ol, ul
@@ -53,4 +62,48 @@ table
 a
   text-decoration none
   color #666
+
+//消除google浏览器黄色框
+input:-webkit-autofill
+  box-shadow:0 0 0 1000px #fff inset;
+input:-webkit-autofill:hover
+  box-shadow:0 0 0 1000px #fff inset;
+input:-webkit-autofill:focus
+  box-shadow:0 0 0 1000px #fff inset;
+
+textarea:-webkit-autofill
+  box-shadow:0 0 0 1000px #fff inset;
+textarea:-webkit-autofill:hover
+  box-shadow:0 0 0 1000px #fff inset;
+textarea:-webkit-autofill:focus
+  box-shadow:0 0 0 1000px #fff inset;
+
+select:-webkit-autofill
+  box-shadow:0 0 0 1000px #fff inset;
+select:-webkit-autofill:hover
+  box-shadow:0 0 0 1000px #fff inset;
+select:-webkit-autofill:focus
+  box-shadow:0 0 0 1000px #fff inset;
+
+::-webkit-input-placeholder
+  color #CFDAE6
+:-moz-placeholder
+  color #CFDAE6
+::-moz-placeholder
+  color #CFDAE6
+:-ms-input-placeholder
+  color #CFDAE6
+
+
+input:focus,textarea:focus{
+  border: 1px solid #8FA1B3;
+  outline: none;
+}
+button:focus{
+  border: none;
+}
+
+
+
+
 

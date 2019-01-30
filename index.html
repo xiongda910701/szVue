@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html style="font-size: 100px;">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/x-icon" href="static/logo1.png">
-    <title>美编</title>
+    <meta name="keywords" content="公众号运营助手，微信编辑器，公众号排版，热点中心，爆文，免费图文素材，公众号多账号管理，微信公众号接单变现，自媒体管理工具，公众号运营工具，新媒体运营，美编">
+    <meta name="keywords" content="美编，是一款简单高效的新媒体运营工具，致力于提升新媒体运营与变现效率。美编拥有强大的微信编辑器，丰富精美的样式，多账号一键切换，图文导入，热点追踪、素材获取，数据分析等实用功能，同时还提供持久稳定的变现服务。">
+    <link rel="icon" type="image/x-icon" href="static/logo.png">
+    <title>美编-简单好用的微信公众号运营工具、微信编辑器和多账号管理，自媒体人首选，公众号助手-美编公众号助手_美编</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" v-cloak></div>
     <!-- built files will be auto injected -->
   </body>
   <script>
@@ -19,9 +24,18 @@
       }, false)
     }
     function setHtmlFontSize() {
-      // 1920是设计稿的宽度，当大于1920时采用1920宽度，比例也是除以19.20
+      //1920是设计稿的宽度，当大于1920时采用1920宽度，比例也是除以19.20
       deviceWidth = document.documentElement.clientWidth > 1920 ? 1920 : document.documentElement.clientWidth;
       document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 19.20 + 'px !important'
     }
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b130cc660ca2d500341b9006be41d28c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
   </script>
 </html>

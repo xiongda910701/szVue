@@ -1,16 +1,13 @@
 <template>
-  <ul class="list">
-    <li class="item" v-for="item in list" :key="item.id">
-      <div class="img-box"><img :src="item.imgPath" alt=""></div>
+  <ul class="list" v-show="list.length">
+    <li class="item addMedia" :data-id="item.ghid?item.ghid:''" :data-username="item.username?item.username:''" v-for="item in list" :key="item.id">
+      <div class="img-box"><img :src="item.avatar?item.avatar:defaultHead" alt=""></div>
       <div class="info-box">
         <span class="name">{{item.name}}</span><br>
-        <span class="desc">{{item.desc}}</span>
+        <span class="desc">{{item.username}}</span>
       </div>
-      <div class="state-box">
-        <span class="state">状态：<span :class="item.state==1?'success':'error'">{{item.state==1?'正常':'失效'}}</span></span>
-        <span class="iconfont icon-tongbu reload"></span><br>
-        <button class="btn-state" :class="item.state==1?'btn-success':'btn-error'">{{item.state==1?'进入':'登录'}}</button>
-      </div>
+      <a class="btn-state active" v-show="item.access_token===1">已授权</a>
+      <a class="btn-state" v-show="item.access_token===0" @click.stop="handleSQ">未授权</a>
     </li>
   </ul>
 </template>
@@ -18,25 +15,15 @@
 <script>
   export default {
     name: "mediaList",
-    data() {
+    props:["list"],
+    data(){
       return {
-        list: [
-          {id: 1, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 2, name: '我有一头小毛驴', desc: '我从来都不骑', state: 0, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 3, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 4, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 5, name: '我有一头小毛驴', desc: '我从来都不骑', state: 0, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 6, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 7, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 8, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 9, name: '我有一头小毛驴', desc: '我从来都不骑', state: 0, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 10, name: '我有一头小毛驴', desc: '我从来都不骑', state: 0, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 11, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 12, name: '我有一头小毛驴', desc: '我从来都不骑', state: 0, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 13, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 14, name: '我有一头小毛驴', desc: '我从来都不骑', state: 0, imgPath: require('@/assets/images/360-icon.png')},
-          {id: 15, name: '我有一头小毛驴', desc: '我从来都不骑', state: 1, imgPath: require('@/assets/images/360-icon.png')},
-        ]
+        defaultHead:require('@/assets/images/defaultHead.png')
+      }
+    },
+    methods:{
+      handleSQ(){
+        window.open('/home/common/wx','sq');
       }
     }
   }
@@ -44,22 +31,31 @@
 
 <style lang="stylus" scoped>
   .list
-    display flex
-    flex-wrap wrap
-    justify-content space-between
+    width 12rem
     margin-top 0.2rem
     margin-bottom 0.2rem
+    min-height 3.5rem
+    overflow hidden
     .item
+      float left
       display flex
       align-content center
       width 3.6rem
       height 0.94rem
-      margin 0.4rem 0 0.15rem 0
+      margin 0.4rem 0.2rem 0.15rem 0
       padding 0.24rem 0.24rem 0.2rem 0.26rem
       box-sizing border-box
-      background-color #FAFBFC
-      border 1px solid #FAFBFC
+      border 1px solid #f0f5fa
+      box-shadow 0 2px 10px 0 rgba(240, 245, 243, 0.35)
       border-radius 4px
+      cursor pointer
+      &:last-child
+        margin-right 0
+      &:hover
+        background-color #f0f5fa
+        border none
+      &:hover .btn-state
+        background-color #f0f5fa
       .img-box
         margin-right 0.17rem
         img
@@ -78,36 +74,18 @@
           font-size 0.14rem
           color #6B8399
           line-height 0.2rem
-      .state-box
-        margin-left 0.4rem
-        .state
-          width 0.69rem
-          height 0.14rem
-          font-size 0.14rem
-          color #475766
-          line-height 0.18rem
-          .success
-            font-size 0.14rem
-            color #12B362
-          .error
-            font-size 0.14rem
-            color #E61739
-        .reload
-          font-size 0.12rem
-          margin-left 0.03rem
-          cursor pointer
-        .btn-state
-          width 0.72rem;
-          height 0.24rem
-          background-color white
-          border-radius: 0.12rem
-          font-size 0.14rem
-          margin-top 0.11rem
-          cursor pointer
-        .btn-success
+      .btn-state
+        width 0.8rem
+        height 0.32rem
+        line-height 0.32rem
+        text-align center
+        color #475766
+        background-color white
+        border 1px solid #475766
+        border-radius 0.16rem
+        cursor pointer
+        margin-left auto
+        &.active
           color #12B362
           border 1px solid #12B362
-        .btn-error
-          color #E61739
-          border 1px solid #E61739
 </style>

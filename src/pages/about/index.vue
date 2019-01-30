@@ -1,9 +1,10 @@
 <template>
   <div class="container">
     <common-header></common-header>
+    <tool></tool>
     <div class="content">
       <div class="left">
-        <div class="title">帮助中心</div>
+        <div class="title">关于美编</div>
         <p class="item" :class="index==1?'active':''" @click="changeState(1)">美编简介</p>
         <p class="item" :class="index==2?'active':''" @click="changeState(2)">联系方式</p>
       </div>
@@ -11,22 +12,11 @@
         <div class="box" v-show="type">
           <img :src="require('@/assets/images/introduce@2x.png')" alt="">
           <div class="desc">
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
-            介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍
-            美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编介绍美编
+            杭州神赞网络技术有限公司旗下品牌美编，是一款简单高效的新媒体运营工具，
+            致力于提升新媒体运营与变现效率。其拥有强大的编辑器，丰富精美的样式，
+            多账号一键切换，热点追踪、素材获取，数据分析等实用功能，同时还提供持久稳定的变现服务。
           </div>
+          <div class="desc1">美编，为新媒体而生！</div>
         </div>
         <div class="box" v-show="!type">
           <ul class="list">
@@ -65,10 +55,11 @@
   import BaiduMap from 'vue-baidu-map/components/map/Map.vue'
   import CommonHeader from '@/components/commonHeader'
   import CommonFooter from '@/components/commonFooter'
+  import Tool from '@/components/tool'
 
   export default {
     name: "about",
-    components:{CommonHeader,BaiduMap,CommonFooter},
+    components:{CommonHeader,BaiduMap,CommonFooter,Tool},
     data(){
       return {
         index:1,
@@ -92,20 +83,26 @@
       }
     },
     mounted() {
+      let type = this.$route.query.type;
+      if(type==="introduce"){
+        this.type = true;
+        this.index= 1;
+      }else{
+        this.type = false;
+        this.index= 2;
 
+      }
     }
   }
 </script>
 
 <style lang="stylus" scoped>
   .container
-    overflow hidden
-    background-color #FAFBFC
     .content
       box-sizing border-box
       display flex
       width 12rem
-      margin 0.4rem  auto 1.6rem auto
+      margin 1.2rem  auto 1.6rem auto
       overflow hidden
       background-color white
       .left
@@ -136,14 +133,15 @@
           img
             display block
             width 100%
-          .desc
+          .desc,.desc1
             font-size 0.14rem
             font-family PingFang-SC-Medium
             font-weight 500
             color #475766
             margin-top 0.4rem
-            text-indent 0.15rem
             line-height 0.28rem
+          .desc1
+            margin-top 0
           .list
             display flex
             justify-content space-between
@@ -155,12 +153,13 @@
               height 2.14rem
               padding 0.15rem
               border 1px solid #CFDAE6
+              border-radius 3px
               img
                 width 80%
                 margin 0 auto 0.05rem auto
               .text
                 font-size 0.13rem
-                color #CFDAE6
+                color #7A8A99
                 line-height 0.2rem
           .map-box
             margin-top 0.4rem

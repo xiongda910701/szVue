@@ -2,11 +2,11 @@
   <div class="container">
     <common-header></common-header>
     <banner></banner>
-    <tablist></tablist>
+    <tablist id="tableList"></tablist>
     <find-more></find-more>
     <user-case></user-case>
     <common-footer></common-footer>
-    <user-info-window></user-info-window>
+    <tool></tool>
   </div>
 </template>
 
@@ -17,16 +17,19 @@
   import FindMore from './findMore'
   import UserCase from './userCase'
   import CommonFooter from '@/components/commonFooter'
-  import UserInfoWindow from '@/components/userInfoWindow'
+  import Tool from '@/components/tool'
 
   export default {
     name: 'Home',
-    components: {CommonHeader,Banner,Tablist,FindMore,UserCase,CommonFooter,UserInfoWindow},
+    components: {CommonHeader,Banner,Tablist,FindMore,UserCase,CommonFooter,Tool},
+    mounted(){
+      let p = this.$route.query.p;
+      console.log(p);
+      localStorage.setItem("p",p);
+    }
   }
 </script>
 
 <style lang="stylus" scoped>
-  .container
-    margin 0
-    padding 0
+
 </style>
